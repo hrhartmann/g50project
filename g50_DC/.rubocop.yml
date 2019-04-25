@@ -1,0 +1,50 @@
+
+Metrics/LineLength:
+  # This will disable the rule completely, regardless what other options you put
+  Enabled: true
+  # Change the default 80 chars limit value
+  Max: 120
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'bin/*'
+    - 'config/**/*'
+    - 'spec/*_helper.rb'
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 15
+  CountComments: false
+
+
+Style/SignalException:
+  Enabled: false
+
+Style/CollectionMethods:
+  Enabled: false
+
+Style/RescueModifier:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/GuardClause:
+  MinBodyLength: 5
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+
