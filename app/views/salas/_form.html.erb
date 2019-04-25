@@ -1,0 +1,42 @@
+<%= form_with(model: sala, local: true) do |form| %>
+  <% if sala.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sala.errors.count, "error") %> prohibited this sala from being saved:</h2>
+
+      <ul>
+      <% sala.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :sala_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :sala_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ptje_disponibilidad %>
+    <%= form.text_field :ptje_disponibilidad, id: :sala_ptje_disponibilidad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ptje_ruido %>
+    <%= form.text_field :ptje_ruido, id: :sala_ptje_ruido %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ptje_enchufes %>
+    <%= form.text_field :ptje_enchufes, id: :sala_ptje_enchufes %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
