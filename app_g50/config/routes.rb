@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+
   devise_for :users
-  resources :campus
+  resources :campus do
+    resources :salas
+
+  end
   get 'home/index'
   root 'home#index'
 
