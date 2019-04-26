@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :cursos
+  resources :posts
   devise_for :users
   resources :campus do
     resources :salas
