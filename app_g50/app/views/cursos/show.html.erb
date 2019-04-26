@@ -12,3 +12,35 @@
 
 <%= link_to 'Edit', edit_curso_path(@curso) %> |
 <%= link_to 'Back', cursos_path %>
+
+<h1>Posts</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Descripcion</th>
+      <th>Autor</th>
+      <th>Fecha de creacion</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @curso.posts.each do |post| %>
+      <tr>
+        <td><%= post.titulo %></td>
+        <td><%= post.descripcion %></td>
+        <td><%= post.user.email %></td>
+        <td><%= post.creacion %></td>
+        <td><%= link_to 'Show', curso_post_path(@curso, post) %></td>
+        <td><%= link_to 'Edit', edit_curso_post_path(@curso, post) %></td>
+        <td><%= link_to 'Destroy', curso_post_path(@curso, post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_curso_post_path(@curso) %>
