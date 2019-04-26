@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :salas
 
   end
+  resources :salas
   get 'home/index'
   root 'home#index'
 

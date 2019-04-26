@@ -1,4 +1,4 @@
-<%= form_with(model: sala, local: true) do |form| %>
+<%= form_with(model: @sala, url: campu_salas_path, local: true) do |form| %>
   <% if sala.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(sala.errors.count, "error") %> prohibited this sala from being saved:</h2>

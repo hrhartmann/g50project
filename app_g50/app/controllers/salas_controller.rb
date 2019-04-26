@@ -1,6 +1,6 @@
 class SalasController < ApplicationController
   before_action :set_sala, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_campu, only: [:new, :update, :create, :destroy, :show]
   # GET /salas
   # GET /salas.json
   def index
@@ -25,10 +25,11 @@ class SalasController < ApplicationController
   # POST /salas.json
   def create
     @sala = Sala.new(sala_params)
+    @sala.campu_id = @campu.id
 
     respond_to do |format|
       if @sala.save
-        format.html { redirect_to @sala, notice: 'Sala was successfully created.' }
+        format.html { redirect_to campu_path(@campu.id), notice: 'Sala was successfully created.' }
         format.json { render :show, status: :created, location: @sala }
       else
         format.html { render :new }
@@ -65,6 +66,10 @@ class SalasController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_sala
       @sala = Sala.find(params[:id])
+    end
+
+    def set_campu
+      @campu = Campu.find(params[:campu_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
